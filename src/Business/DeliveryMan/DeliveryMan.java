@@ -5,10 +5,16 @@
  */
 package Business.DeliveryMan;
 
+import Business.UserAccount.UserAccount;
+
 /**
  *
  * @author harold
  */
 public class DeliveryMan {
+
+    public void setDeliveryUser(UserAccount deluser) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

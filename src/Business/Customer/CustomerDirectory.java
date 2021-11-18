@@ -39,4 +39,8 @@ public class CustomerDirectory {
      public void deleteCustomer(Customer customer) {
         cList.remove(customer);
     }
+
+    public Customer createCustomer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

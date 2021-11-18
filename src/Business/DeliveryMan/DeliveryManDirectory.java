@@ -10,5 +10,9 @@ package Business.DeliveryMan;
  * @author harold
  */
 public class DeliveryManDirectory {
+
+    public DeliveryMan createDeliveryMan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
