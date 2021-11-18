@@ -49,7 +49,14 @@ public class EcoSystem extends Organization{
        // networkList=new ArrayList<Network>();
     }
 
-    
+    public CustomerDirectory getCustomerDirectory() {
+        return customerDirectory;
+    }
+
+    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
+        this.customerDirectory = customerDirectory;
+    }
+        
     public boolean checkIfUserIsUnique(String userName){
        //
        return false;
