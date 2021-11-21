@@ -5,30 +5,62 @@
  */
 package Business.Restaurant;
 
+import Business.Organization;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author harold
  */
 public class RestaurantDirectory {
-    private List<Restaurant> restaurantList = new ArrayList<>();
+     private ArrayList<Organization> organizationList;
+     private ArrayList<Restaurant> restaurentList;
 
-    public List<Restaurant> getRestaurantList() {
-        return restaurantList;
+    public RestaurantDirectory() {
+        restaurentList = new ArrayList<>();
     }
 
-    public void setRestaurantList(List<Restaurant> restaurantList) {
-        this.restaurantList = restaurantList;
+    public ArrayList<Restaurant> getRestaurentList() {
+        return restaurentList;
+    }
+
+    public void setRestaurentList(ArrayList<Restaurant> restaurentList) {
+        this.restaurentList = restaurentList;
+    }
+
+    public ArrayList<Organization> getOrganizationList() {
+        return organizationList;
     }
     
-
-    public Restaurant createRestaurant() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        Restaurant restaurant = new Restaurant();
-        restaurantList.add(restaurant);
-        return restaurant;
+    public Organization createOrganization(Organization.Type type){
+        Organization organization = null;
+        if (type.getValue().equals(Organization.Type.RestaurantAdmin.getValue())){
+            organization = new Restaurant();
+            organizationList.add(organization);
+        }
+        return organization;
     }
     
+        public Organization searchOrganization(String organizationName){
+        for (Organization organization: organizationList) {
+            if (organization.getName().equals(organizationName)) {
+                return organization;
+            }
+        }
+        return null;
+    }
+
+    public Restaurant createRestaurant(String restName, String restMan, long phoneNumber, String address, UserAccount userAccount) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            Restaurant r = new Restaurant();
+        r.setRestaurentName(restName);
+        r.setRestaurentManager(restMan);
+        r.setPhoneNumber(phoneNumber);
+        r.setAddress(address);
+        r.setUserAccount(userAccount);
+        restaurentList.add(r);  
+        return r;
+    }
 }
+

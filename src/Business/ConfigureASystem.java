@@ -1,18 +1,13 @@
 package Business;
 
-import Business.Customer.Customer;
-import Business.Customer.CustomerDirectory;
-import Business.DeliveryMan.DeliveryMan;
-import Business.DeliveryMan.DeliveryManDirectory;
 import Business.Employee.Employee;
 import Business.Restaurant.Restaurant;
-import Business.Restaurant.RestaurantDirectory;
 import Business.Role.AdminRole;
-import Business.Role.CustomerRole;
-import Business.Role.DeliverManRole;
 import Business.Role.SystemAdminRole;
 import Business.UserAccount.UserAccount;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -23,22 +18,21 @@ public class ConfigureASystem {
     public static EcoSystem configure(){
         
         EcoSystem system = EcoSystem.getInstance();
-        system.setCustomerDirectory(new CustomerDirectory());
-        system.setRestaurantDirectory(new RestaurantDirectory());
-        system.setDeliveryManDirectory(new DeliveryManDirectory());
+        
         //Create a network
         //create an enterprise
         //initialize some organizations
         //have some employees 
         //create user account
         
-        // Sytem Admin
+        // System Admin
         Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
         UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
         
+        
         //Restaurant Management 1
        Employee restMan = system.getEmployeeDirectory().createEmployee("Rest Manager 1");
-       UserAccount<Restaurant>  restuser = system.getUserAccountDirectory().createUserAccount("mng1", "mng1", restMan, new AdminRole());
+       UserAccount restuser = system.getUserAccountDirectory().createUserAccount("mng1", "mng1", restMan, new AdminRole());
        Restaurant restaurant = system.getRestaurantDirectory().createRestaurant();
        restaurant.setManager(restuser);
        restuser.setWorkAreaObj(restaurant);
@@ -48,7 +42,7 @@ public class ConfigureASystem {
        
        //Restaurant Management 2
        Employee restMan1 = system.getEmployeeDirectory().createEmployee(" Rest Manager 2");
-       UserAccount<Restaurant>  restuser1 = system.getUserAccountDirectory().createUserAccount("mng2", "mng2", restMan1, new AdminRole());
+       UserAccount  restuser1 = system.getUserAccountDirectory().createUserAccount("mng2", "mng2", restMan1, new AdminRole());
        Restaurant restaurant1 = system.getRestaurantDirectory().createRestaurant();
        restaurant1.setManager(restuser1);
        restuser1.setWorkAreaObj(restaurant1);

@@ -5,16 +5,26 @@
  */
 package Business.DeliveryMan;
 
-import Business.UserAccount.UserAccount;
+import Business.Organization;
+import Business.Role.DeliverManRole;
+import Business.Role.Role;
+import java.util.ArrayList;
 
 /**
  *
  * @author harold
  */
-public class DeliveryMan {
+public class DeliveryMan extends Organization{
 
-    public void setDeliveryUser(UserAccount deluser) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      public DeliveryMan() {
+        super(Organization.Type.DeliveryMan.getValue());
     }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new DeliverManRole());
+        return roles;
+    }
+  
 }

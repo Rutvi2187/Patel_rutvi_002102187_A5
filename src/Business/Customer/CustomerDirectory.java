@@ -5,7 +5,7 @@
  */
 package Business.Customer;
 
-import Business.UserAccount.UserAccount;
+import Business.Organization;
 import java.util.ArrayList;
 
 /**
@@ -13,34 +13,37 @@ import java.util.ArrayList;
  * @author harold
  */
 public class CustomerDirectory {
-    private ArrayList<Customer> cList;
-    
-     public CustomerDirectory() {
-        cList = new ArrayList<>();
+      private ArrayList<Organization> organizationList;
+
+    public CustomerDirectory() {
+        organizationList = new ArrayList();
     }
 
-    public ArrayList<Customer> getcList() {
-        return cList;
-    }
-
-    public void setcList(ArrayList<Customer> cList) {
-        this.cList = cList;
-    }
-    public Customer createCustomer(String name, String address, long phoneNumber, UserAccount userAccount){
-        Customer c = new Customer();
-        c.setcName(name);
-        c.setcAddress(address);
-        c.setcPhoneNumber(phoneNumber);
-        c.setUserAccount(userAccount);
-        cList.add(c);  
-        return c;
+    public ArrayList<Organization> getOrganizationList() {
+        return organizationList;
     }
     
-     public void deleteCustomer(Customer customer) {
-        cList.remove(customer);
+    public Organization createOrganization(Organization.Type type){
+        Organization organization = null;
+      if (type.getValue().equals(Organization.Type.Customer.getValue())){
+            organization = new Customer();
+            organizationList.add(organization);
+        }
+        return organization;
     }
-
-    public Customer createCustomer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+   
+      public void deleteCustomer(Customer customer){
+        organizationList.remove(customer); 
+    }
+    
+        public Organization searchOrganization(String organizationName){
+        for (Organization organization: organizationList) {
+            if (organization.getName().equals(organizationName)) {
+                return organization;
+            }
+        }
+        return null;
     }
 }
+
