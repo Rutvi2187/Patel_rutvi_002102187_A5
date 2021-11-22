@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class Restaurant  extends Organization{
     
-        private String restaurentName;
+    private String restaurentName;
     private String restaurentManager;
     private Long phoneNumber;
     private String address;

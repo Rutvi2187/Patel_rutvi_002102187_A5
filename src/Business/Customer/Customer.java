@@ -8,6 +8,7 @@ package Business.Customer;
 import Business.Organization;
 import Business.Role.CustomerRole;
 import Business.Role.Role;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -15,8 +16,18 @@ import java.util.ArrayList;
  * @author harold
  */
 public class Customer extends Organization {
+    private UserAccount CustomerUser;
+    
       public Customer() {
         super(Organization.Type.Customer.getValue());
+    }
+
+    public UserAccount getCustomerUser() {
+        return CustomerUser;
+    }
+
+    public void setCustomerUser(UserAccount CustomerUser) {
+        this.CustomerUser = CustomerUser;
     }
     
     @Override

@@ -62,6 +62,10 @@ public class UserAccount {
         return workQueue;
     }
 
+    public void setWorkQueue(WorkQueue workQueue) {
+        this.workQueue = workQueue;
+    }
+
     
     
     @Override

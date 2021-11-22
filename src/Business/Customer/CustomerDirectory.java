@@ -45,5 +45,9 @@ public class CustomerDirectory {
         }
         return null;
     }
+
+    public Customer createCustomer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 

@@ -8,6 +8,7 @@ package Business.DeliveryMan;
 import Business.Organization;
 import Business.Role.DeliverManRole;
 import Business.Role.Role;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -15,9 +16,18 @@ import java.util.ArrayList;
  * @author harold
  */
 public class DeliveryMan extends Organization{
+    private UserAccount DeliveryUser;
 
       public DeliveryMan() {
         super(Organization.Type.DeliveryMan.getValue());
+    }
+
+    public UserAccount getDeliveryUser() {
+        return DeliveryUser;
+    }
+
+    public void setDeliveryUser(UserAccount DeliveryUser) {
+        this.DeliveryUser = DeliveryUser;
     }
     
     @Override

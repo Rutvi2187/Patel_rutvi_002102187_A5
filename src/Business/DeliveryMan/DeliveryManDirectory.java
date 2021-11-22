@@ -44,4 +44,8 @@ public class DeliveryManDirectory {
         }
         return null;
     }
+
+    public DeliveryMan createDeliveryMan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

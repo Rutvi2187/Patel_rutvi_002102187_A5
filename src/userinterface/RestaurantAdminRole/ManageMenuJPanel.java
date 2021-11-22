@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author bdurg
+ * @author Rutvi Patel
  */
 public class ManageMenuJPanel extends javax.swing.JPanel {
 
@@ -75,7 +75,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         ItemNameTextField = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(158, 158, 59));
+        setBackground(new java.awt.Color(185, 224, 143));
 
         ItemPriceTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,6 +133,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Restaurant Menu");
 
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -167,13 +168,13 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                         .addGap(33, 33, 33)
                         .addComponent(jButton2)
                         .addGap(87, 87, 87)
-                        .addComponent(jLabel1))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ItemPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
@@ -192,7 +193,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

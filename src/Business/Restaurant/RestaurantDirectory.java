@@ -51,16 +51,10 @@ public class RestaurantDirectory {
         return null;
     }
 
-    public Restaurant createRestaurant(String restName, String restMan, long phoneNumber, String address, UserAccount userAccount) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            Restaurant r = new Restaurant();
-        r.setRestaurentName(restName);
-        r.setRestaurentManager(restMan);
-        r.setPhoneNumber(phoneNumber);
-        r.setAddress(address);
-        r.setUserAccount(userAccount);
-        restaurentList.add(r);  
-        return r;
+    public Restaurant createRestaurant() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 }
 
